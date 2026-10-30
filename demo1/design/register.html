@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="main-block">
+            <h1>Регистрация</h1>
+            <form>
+                <label for="login">Логин</label>
+                <input type="text" placeholder="Введите логин" name="login" id="login" required minlength="6">
+
+                <label for="password">Пароль</label>
+                <input type="password" placeholder="Введите пароль" name="password" id="password" required minlength="8">
+
+                <label for="name">ФИО</label>
+                <input type="text" placeholder="Иванов Иван Иванович" name="name" id="name" required>
+
+                <label for="phone">Телефон</label>
+                <input type="tel" placeholder="8(XXX)XXX-XX-XX" name="phone" id="phone" required>
+
+                <label for="email">Email</label>
+                <input type="email" placeholder="your.mail@mail.ru" name="email" id="email" required>
+
+                <button type="submit">Создать пользователя</button>
+
+                <a href="">Уже есть аккаунт? Войти</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
