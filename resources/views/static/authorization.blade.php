@@ -5,10 +5,20 @@
 @endsection
 
 @section('content')
+@if($errors->any())
+    <div class="block-errors">
+        <ul>
+            @foreach($errors->all() as $err)
+                <li>{{ $err }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <div class="main-container">
     <div class="main-block">
         <h1>Авторизация</h1>
-        <form action="{{ route('authorization.post') }}">
+        <form action="{{ route('authorization.post') }}" method="POST">
             @csrf
             <label for="login">Логин</label>
             <input type="text" placeholder="Введите логин" name="login" id="login" required minlength="6" value="{{ old('login') }}">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\AuthorizationRequest;
 
 use Illuminate\Http\Request;
 
@@ -33,8 +34,8 @@ class BasicController extends Controller
         $data = $request->validated();
     }
 
-    public function submit_authorization(Request $request)
+    public function submit_authorization(AuthorizationRequest $request)
     {
-        return redirect('/authorization');
+        $data = $request->validated();
     }
 }

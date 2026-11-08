@@ -5,14 +5,6 @@
 @endsection
 
 @section('content')
-<div class="header">
-     <a href="requests.html" class="logo">Конференции.РФ</a>
-     <nav>
-         <a href="requests.html">Мои заявки</a>
-         <a href="create-requests.html">Новая заявка</a>
-         <a href="register.html">Выйти</a>
-     </nav>
- </div>
 
 <div class="main-container">
     <h1 class="page-title">Мои заявки</h1>
