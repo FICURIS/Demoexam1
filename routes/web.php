@@ -1,23 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BasicController;
 
-Route::get('/register', function () {
-    return view('static.register');
-})->name('register');
+Route::get('/', [BasicController::class, 'register'])->name('register');
 
-Route::get('/authorization', function () {
-    return view('static.authorization');
-})->name('authorization');
+Route::get('/login', [BasicController::class, 'authorization'])->name('authorization');
 
-Route::get('/requests', function () {
-    return view('static.requests');
-})->name('requests');
+Route::get('/home', [BasicController::class, 'requests'])->name('requests');
 
-Route::get('/create_requests', function () {
-    return view('static.create_requests');
-})->name('create_requests');
+Route::get('/create_requests', [BasicController::class, 'create_requests'])->name('create_requests');
 
-Route::post('/register', function () {
-    return redirect('/register')->withInput();
-})->name('register.post');
+Route::post('/', [BasicController::class, 'submit_register'])->name('register.post');
+
+Route::post('/authorization', [BasicController::class, 'submit_authorization'])->name('authorization.post');
