@@ -40,7 +40,7 @@ class AuthController extends Controller
     public function login(AuthorizationRequest $request)
     {
         $credentials = $request->only('login', 'password');
-
+        
         if (Auth::attempt($credentials))
             {
                 $request->session()->regenerate();

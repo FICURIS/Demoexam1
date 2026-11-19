@@ -18,7 +18,7 @@
 <div class="main-container">
     <div class="main-block">
         <h1>Регистрация</h1>
-        <form action="{{ route('register.post') }}" method="POST">
+        <form action="{{ route('register') }}" method="POST">
             @csrf
 
             <label for="login">Логин</label>
@@ -34,7 +34,7 @@
             <input type="text" placeholder="Введите имя" name="name" id="name" required value="{{ old('name') }}">
 
             <label for="name">Отчество</label>
-            <input type="text" placeholder="Введите отчество" name="Middlename" id="Middlename" required value="{{ old('Middlename') }}">
+            <input type="text" placeholder="Введите отчество" name="middlename" id="middlename" required value="{{ old('middlename') }}">
 
             <label for="phone">Телефон</label>
             <input type="tel" placeholder="8(XXX)XXX-XX-XX" name="phone" id="phone" required value="{{ old('phone') }}">
@@ -44,7 +44,7 @@
 
             <button type="submit">Создать пользователя</button>
 
-            <a href="{{ route('authorization') }}">Уже есть аккаунт? Войти</a>
+            <a href="{{ route('login') }}">Уже есть аккаунт? Войти</a>
         </form>
     </div>
 </div>

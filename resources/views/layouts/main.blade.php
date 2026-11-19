@@ -7,23 +7,26 @@
 </head>
 <body>
     <header>
-        <a href="requests.html" class="logo">Конференции.РФ</a>
-        @auth   
+        <a href="/" class="logo">Конференции.РФ</a>  
         <nav>
-            <a href="{{ route('requests') }}">Мои заявки</a>
-            <a href="{{ route('create_requests') }}">Новая заявка</a>
-            <form action="{{ route('register.post') }}" method="POST">
+            @auth 
+            <a href="{{ route('applications.index') }}">Мои заявки</a>
+            <a href="{{ route('applications.create') }}">Новая заявка</a>
+            @if(Auth::user()->role_id ==2)
+            <a href="{{ route('admin.applications') }}">Адмника</a>
+            @endif
+            <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit" class="link-btn">Выйти</button>
             </form>
-        
         @endauth
-            <a href="{{ route('register') }}">Регистрация</a>
-            <a href="{{ route('authorization') }}">Войти</a>
+
         @guest
+            <a href="{{ route('register') }}">Регистрация</a>
+            <a href="{{ route('login') }}">Войти</a>
+        @endguest
         </nav>
 
-        @endguest
     </header>
     <main class="container">
     @yield('content')
