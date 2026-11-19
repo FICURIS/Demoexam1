@@ -27,8 +27,14 @@
             <label for="password">Пароль</label>
             <input type="password" placeholder="Введите пароль" name="password" id="password" required minlength="8">
 
-            <label for="name">ФИО</label>
-            <input type="text" placeholder="Иванов Иван Иванович" name="name" id="name" required value="{{ old('name') }}">
+            <label for="name">Фамилия</label>
+            <input type="text" placeholder="Введите фамилию" name="surname" id="surname" required value="{{ old('surname') }}">
+
+            <label for="name">Имя</label>
+            <input type="text" placeholder="Введите имя" name="name" id="name" required value="{{ old('name') }}">
+
+            <label for="name">Отчество</label>
+            <input type="text" placeholder="Введите отчество" name="Middlename" id="Middlename" required value="{{ old('Middlename') }}">
 
             <label for="phone">Телефон</label>
             <input type="tel" placeholder="8(XXX)XXX-XX-XX" name="phone" id="phone" required value="{{ old('phone') }}">
