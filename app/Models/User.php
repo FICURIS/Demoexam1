@@ -56,4 +56,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Review::class);
     }
+
+    public function getAuthIdentifierName()
+    {
+        return 'login';
+    }
 }
