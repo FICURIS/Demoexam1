@@ -1,9 +1,201 @@
-@import 'tailwindcss';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+body {
+    background-color: #f8f9fa;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/* шапка */
+.site-header {
+    background-color: #007bff;
+    padding: 15px 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.site-logo {
+    height: 70px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-nav a:hover {
+    color: #f8f9fa;
+}
+
+.link-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #721c24;
+    color:#fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.link-btn:hover {
+    background-color: #b82937;
+}
+
+/* заявки */
+
+
+/* =========================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ "МОИ ЗАЯВКИ"
+   ========================================= */
+
+/* Заголовок и кнопка "Создать заявку" */
+.main-block h1 {
+    margin-bottom: 15px;
+}
+
+/* Стилизация кнопки-ссылки "Создать заявку" */
+.main-block > a.btn {
+    margin-bottom: 25px;
+    text-decoration: none;
+}
+
+/* Карточка заявки */
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--blue-light); /* Синяя полоска слева */
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* Заголовок внутри карточки (Название помещения) */
+.card h3 {
+    font-size: 20px;
+    color: var(--blue-dark);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* Текст внутри карточки */
+.card p {
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 15px;
+}
+
+.card p strong {
+    color: #222;
+    font-weight: 700;
+}
+
+/* Блок с уже оставленным отзывом */
+.review-block {
+    background-color: #e8f5e9; /* Светло-зеленый фон */
+    border-left: 4px solid var(--success);
+    padding: 12px 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+.review-block p {
+    margin: 0;
+    color: #2e7d32; /* Темно-зеленый текст */
+    font-size: 14px;
+}
+
+/* Форма добавления отзыва */
+.card form {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.card form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.card form textarea {
+    margin-bottom: 10px;
+}
+
+.card form button[type="submit"] {
+    padding: 8px 15px;
+    font-size: 14px;
+    width: auto; /* Чтобы кнопка не растягивалась на всю ширину */
+}
+
+/* Сообщение, если заявок нет */
+.main-block > p {
+    font-size: 16px;
+    color: var(--gray);
+    background: var(--white);
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px dashed var(--border-color);
+}
+
+.main-block > p a {
+    color: var(--blue-light);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.main-block > p a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность для мобильных (390x844) */
+@media (max-width: 600px) {
+    .card {
+        padding: 15px;
+    }
+    
+    .card h3 {
+        font-size: 18px;
+    }
+
+    /* На мобильных кнопка "Создать заявку" и кнопка "Отправить отзыв" на всю ширину */
+    .main-block > a.btn,
+    .card form button[type="submit"] {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 12px;
+    }
 }
