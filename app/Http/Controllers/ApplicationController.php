@@ -17,11 +17,12 @@ class ApplicationController extends Controller
         return view('applications.index', compact('applications'));
     }
 
-    public function create()
-    {
-        $rooms = Room::all();
-        return view('applications.create', compact('rooms'));
-    }
+    public function create(Request $request)
+{
+    $rooms = Room::all();
+    $selectedRoomId = $request->query('room_id');
+    return view('applications.create', compact('rooms', 'selectedRoomId'));
+}
 
     public function store(ApplicationRequest $request)
     {

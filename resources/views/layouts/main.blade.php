@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('header-title')</title>
 
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
@@ -13,13 +15,15 @@
         <div class="header-inner">
             <a href="/" class="logo">
                 <img src="{{ asset('images/logo.jpg') }} " alt="Конференции.РФ" class="site-logo">
+                <span class="site-name">Конференции.РФ</span>
             </a>
             <nav class="main-nav">
-                @auth 
+                @auth
+                <a href="{{ route('catalog.index') }}">Главная</a> 
                 <a href="{{ route('applications.index') }}">Мои заявки</a>
                 <a href="{{ route('applications.create') }}">Новая заявка</a>
                 @if(Auth::user()->role_id ==2)
-                <a href="{{ route('admin.applications') }}">Адмника</a>
+                <a href="{{ route('admin.applications') }}">Панель администратора</a>
                 @endif
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf

@@ -5,10 +5,8 @@ use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CatalogController;
 
-Route::get('/', function (){
-    return redirect()->route('login');
-});
 
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
@@ -31,3 +29,6 @@ Route::middleware('auth')->group(function(){
         Route::post('/applications/{id}/status', [AdminController::class, 'updateStatus'])->name('admin.applications.status');
     });
 });
+
+Route::get('/', [CatalogController::class, 'index'])->name('catalog.index');
+Route::get('/room/{id}', [CatalogController::class, 'show'])->name('catalog.show');

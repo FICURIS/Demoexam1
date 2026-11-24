@@ -12,4 +12,9 @@ class Room extends Model
     {
         return $this->hasMany(Application::class);
     }
+
+    public function reviews()
+    {
+        return $this->hasManyThrough(Review::class, Application::class);
+    }
 }
