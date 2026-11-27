@@ -707,3 +707,44 @@ body {
     border-radius: 6px;
     text-align: center;
 }
+
+.room-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.room-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.room-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.btn-sm {
+    padding: 8px 12px;
+    font-size: 14px;
+    flex: 1;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}

@@ -38,7 +38,7 @@
         
         <div class="rooms-grid">
             @foreach($rooms as $room)
-                <a href="{{ route('catalog.show', $room->id) }}" class="room-card">
+                <div class="room-card">
                     <div class="room-image">
                         @if($room->image)
                             <img src="{{ asset($room->image) }}" alt="{{ $room->title }}">
@@ -46,12 +46,26 @@
                             <div class="no-image">Нет фото</div>
                         @endif
                     </div>
+                    
                     <div class="room-info">
                         <h3>{{ $room->title }}</h3>
                         <span class="room-type">{{ $room->type }}</span>
                         <p class="room-price">от {{ $room->price }} ₽</p>
+                        
+                        <!-- Блок с кнопками -->
+                        <div class="room-actions">
+                            <!-- 1. Кнопка "Подробнее" (ведет на описание) -->
+                            <a href="{{ route('catalog.show', $room->id) }}" class="btn btn-outline btn-sm">
+                                Подробнее
+                            </a>
+                            
+                            <!-- 2. Кнопка "Забронировать" (ведет на создание заявки с выбранным ID) -->
+                            <a href="{{ route('applications.create', ['room_id' => $room->id]) }}" class="btn btn-primary btn-sm">
+                                Забронировать
+                            </a>
+                        </div>
                     </div>
-                </a>
+                </div>
             @endforeach
         </div>
     </div>

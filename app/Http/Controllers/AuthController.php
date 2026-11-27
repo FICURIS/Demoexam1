@@ -50,7 +50,7 @@ class AuthController extends Controller
                         return redirect()->route('admin.applications');
                     }
 
-                return redirect()->route('applications.index');
+                return redirect()->route('catalog.index');
             }
 
         return back()->withErrors([
